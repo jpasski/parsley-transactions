@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.transaction.editingDomains">
+      <editingDomain
+            factory="org.example.parsley.transactional.TransactionalExecutableExtensionFactory:org.example.parsley.transactional.DefaultTransactionalEditingDomainFactory"
+            id="org.example.parsley.transactional.id">
+      </editingDomain>
+   </extension>
+
+</plugin>

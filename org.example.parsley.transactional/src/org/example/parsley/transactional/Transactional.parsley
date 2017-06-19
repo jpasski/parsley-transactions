@@ -1,0 +1,25 @@
+import org.eclipse.emf.transaction.TransactionalEditingDomain
+import org.eclipse.emf.edit.domain.EditingDomain
+import org.eclipse.emf.parsley.edit.EditingDomainFinder
+
+/* org.example.parsley.transaction EMF Parsley Dsl Module file */
+module org.example.parsley.transactional {
+
+	bindings {
+
+		// Inject the factory used to create transactional editing domains
+		provide TransactionalEditingDomain.Factory -> DefaultTransactionalEditingDomainFactory
+
+		// needs to match extension point!
+		value String TransactionalEditingDomainId -> "org.example.parsley.transactional.id"
+
+		// ideally the same class would provide both below, but don't think that's possible
+		provide TransactionalEditingDomain -> TransactionalEditingDomainProvider
+		provide EditingDomain -> TransactionalBackedEditingDomainProvider
+
+		// use a transactional-aware finder
+		type EditingDomainFinder -> TransactionalEditingDomainFinder
+
+	}
+
+}

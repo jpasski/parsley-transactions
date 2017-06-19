@@ -1,4 +1,4 @@
-package org.example.parsley.transaction;
+package org.example.parsley.transactional;
 
 import org.osgi.framework.BundleContext;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -6,15 +6,15 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class TransactionActivator extends AbstractUIPlugin {
+public class TransactionalActivator extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "org.example.parsley.transaction"; //$NON-NLS-1$
 
 	// The shared instance
-	private static TransactionActivator plugin;
+	private static TransactionalActivator plugin;
 
-	public TransactionActivator() {
+	public TransactionalActivator() {
 	}
 
 	/*
@@ -40,7 +40,7 @@ public class TransactionActivator extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static TransactionActivator getDefault() {
+	public static TransactionalActivator getDefault() {
 		return plugin;
 	}
 
